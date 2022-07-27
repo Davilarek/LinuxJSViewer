@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LinuxJSEditionViewer</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    html {
+        display: table;
+        margin: auto;
+    }
+
+    body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    p {
+        user-select: none;
+    }
+
+    /* .template-message1 .fade.in {
+        animation-name: fadeIn;
+    }
+
+    .template-message1 .fade.out {
+        animation-name: fadeOut;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(startYposition);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(endYposition);
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+            transform: translateY(startYposition);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(endYposition);
+        }
+    } */
+</style>
+
+<body style="cursor: auto;">
+
+    <div class="content" style="position: fixed;left: 15%;top: 10%;">
+        <div
+            style="height: 720px; width: 1280px; border: solid #000; border-width: 1px 1px;position: relative;box-sizing: border-box;">
+            <div class="content-viewer" style="width: 50%; margin: 0 auto;">
+                <div class="message-queue"
+                    style="position: relative;left: 10%; max-height: 0px; z-index: 20;/*left: 35vw;*/">
+
+                </div>
+                <!-- <p style="text-align:center;">
+                    Hello, Centered World!
+                </p> -->
+            </div>
+        </div>
+        <input style="box-sizing: border-box; height: 20px; width: 175px;" type="text" id="connect-input"
+            placeholder="IP...">
+        <button style="height: 20px; width: 65px;" id="connect-button">Connect</button>
+        <!-- 
+            TODO: Add fullscreen button
+        -->
+        <!-- <p style="text-align:center;">
+            Hello, Centered World!
+        </p> -->
+    </div>
+    <div class="templates" style="display: block;">
+        <div class="template-message1"
+            style="height: 50px; min-width: 50px; max-width: 500px; border: solid #000000; border-width: 1px 1px; position: relative;display: none;  z-index: 9; background-color: white; z-index: 1;">
+            <p class="message-text" style="text-align:center;">
+                MessageHere
+            </p>
+            <!-- close button with onclick-->
+            <div class="close-button" style="position: absolute; right: 0; top: 0;">
+                <img src="img/close.png" alt="close" style="width: 20px; height: 20px;">
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
