@@ -343,12 +343,12 @@ function listenForTaskbarButtons(socket) {
         }
     });
 }
-let objects = {};
-em.on('guiEvent', function (data) {
-    if (data.split(" ")[0].endsWith("-rendered")) {
-        objects[data.split(" ")[1]] = data.split(" ")[2];
-    }
-});
+// let objects = {};
+// em.on('guiEvent', function (data) {
+//     if (data.split(" ")[0].endsWith("-rendered")) {
+//         objects[data.split(" ")[1]] = data.split(" ")[2];
+//     }
+// });
 // 21:45 19.05.2022 - i think i gave up on this... please, someone find a way to send LARGE data over tcp without chunking...
 
 // function createIcon(iconPath) {
