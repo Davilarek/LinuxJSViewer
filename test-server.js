@@ -49,7 +49,7 @@ const rl = readline.createInterface({
 });
 io.on('connection', function (socket) {
     if (connected) {
-        socket.send('echo "only one connection allowed"');
+        socket.send(Date.now() + "{split}" + 'echo "only one connection allowed"');
         socket.disconnect(true);
         return;
     }
