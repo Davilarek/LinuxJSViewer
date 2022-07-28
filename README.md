@@ -1,5 +1,5 @@
 # LinuxJSViewer
-### After days of testing and fixing bugs, finally I publish source code for LinuxJSViewer, GUI for [LinuxJSEdition](https://github.com/Davilarek/LinuxJSEdition)
+### After days of testing and fixing bugs, I finally publish source code for LinuxJSViewer, GUI for [LinuxJSEdition](https://github.com/Davilarek/LinuxJSEdition)
 
 ### At this moment it's highly unstable and doesn't contain anything but just a base.
 
