@@ -322,7 +322,7 @@ function finalMessageEventProcess(e) {
             }
         }
         else {
-            finalHtmlElement[baseHtmlEditMode] = htmlData;
+            finalHtmlElement[baseHtmlEditMode] = htmlData.replace("\\newline", "\r\n");
         }
         document.getElementById(baseHtmlTime).additionalId = additionalId;
 
@@ -342,6 +342,11 @@ function finalMessageEventProcess(e) {
 }
 
 //https://gist.github.com/sstur/7379870
+/**
+ * 
+ * @param {Element} node 
+ * @returns 
+ */
 function toJSON(node) {
     let propFix = { for: 'htmlFor', class: 'className' };
     let specialGetters = {
