@@ -3,13 +3,21 @@
 
 ### At this moment it's highly unstable and doesn't contain anything but just a base.
 
+## TODO:
+- fix really ugly and bad code
+- add console - in developmnent
+- finish start menu
+- fix other resolutions
+- icons for apps
+- themes
+
 ## Credits
 - [express](https://github.com/expressjs/express) - website on localhost
 - [socket.io](https://github.com/socketio/socket.io) - websocket and communication
 
 ## Installation
 
-LinuxJSEdition requires [Node.js](https://nodejs.org/) v14+ to run.
+LinuxJSViewer requires [Node.js](https://nodejs.org/) v14+ to run.
 
 ##### Step 1.
 Download the repository (or clone) and unzip.
