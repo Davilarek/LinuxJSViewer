@@ -1,4 +1,5 @@
 .vscode/*/*.*
 .vscode/*.*
 node_modules
+OldVersion/node_modules
 *.code-workspace
