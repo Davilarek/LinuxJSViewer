@@ -11,9 +11,10 @@
 - icons for apps
 - themes
 
-## Credits
-- [express](https://github.com/expressjs/express) - website on localhost
-- [socket.io](https://github.com/socketio/socket.io) - websocket and communication
+## Stuff used
+
+- [express](https://github.com/expressjs/express) - module for frontend
+- [socket.io](https://github.com/socketio/socket.io) - module for websocket
 
 ## Installation
 
