@@ -3,3 +3,4 @@
 node_modules
 OldVersion/node_modules
 *.code-workspace
+edit-index.js
