@@ -202,8 +202,15 @@ function resolveServerResponse(response) {
     if (response.command == "remove-html") {
         finalMessageEventProcess("msg-remove-html: " + response.time + "{time}" + response.value);
     }
+    if (response.command == "jadd-html") {
+        finalMessageEventProcess("msg-just-add-the-damn-html: " + response.time + "{time}" + response.value);
+    }
 }
-
+/**
+ * 
+ * @param {String} e 
+ * @returns 
+ */
 function finalMessageEventProcess(e) {
     //console.log(e.data);
     if (e.startsWith("msg-info: ")) {
@@ -338,6 +345,18 @@ function finalMessageEventProcess(e) {
         let messageData = e.substring(16).split("{time}")[1];
         var element = document.getElementById(messageData);
         sendDataWS("xml-data " + messageData + "{split}" + JSON.stringify(toJSON(element)));
+    }
+    if (e.startsWith("msg-just-add-the-damn-html: ")) {
+        console.log(e);
+        e = e.replace("msg-just-add-the-damn-html: ", "");
+        var domParser = new DOMParser().parseFromString(e.split("{time}")[1].replace(/\\n/g, "\n").replace(/\\r/g, "\r"), "text/html").children[0].children[1].children[0];
+        domParser.id = e.split("{time}")[0];
+        if (domParser.classList.contains("w-input-bar")) {
+            // $(domParser).draggable({ handle: domParser.children[3], containment: document.getElementsByClassName("content-viewer")[0].parentElement });
+            sendDataWS("window-input-rendered " + e.split("{time}")[0]);
+        }
+        var contentViewer = document.getElementsByClassName("content-viewer")[0].parentElement;
+        contentViewer.appendChild(domParser);
     }
 }
 
