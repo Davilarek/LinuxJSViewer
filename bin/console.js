@@ -6,6 +6,23 @@
     // let fullData = "";
     let targetWindowId = 0;
 
+    const path = require('path');
+    const fs = require('fs');
+    const wget = require(basePath + "/wget-fromscratch.js");
+    const resourceList = [
+        "https://raw.githubusercontent.com/Davilarek/LinuxJSViewer/master/html-gui/console-input-template.html",
+    ];
+
+    if (!fs.existsSync(basePath + path.sep + "html-gui")) {
+        fs.mkdirSync(basePath + path.sep + "html-gui");
+    }
+
+    for (let index = 0; index < resourceList.length; index++) {
+        const element = resourceList[index];
+        if (!fs.existsSync(basePath + path.sep + "html-gui" + path.sep + path.basename(element)))
+            wget.download(element, basePath + path.sep + "html-gui" + path.sep + path.basename(element));
+    }
+
     // var targetObj = {};
     // var targetProxy = new Proxy(targetObj, {
     //     set: function (target, key, value) {
@@ -128,6 +145,7 @@
     //         }
     //     });
     // }
-
-    createConsoleWindow(currentSocket);
+    setTimeout(() => {
+        createConsoleWindow(currentSocket);
+    }, 500);
 })();
