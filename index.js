@@ -493,7 +493,7 @@ function connectUsingIp(ip, msg) {
 
         // xhr.send(data);
         // use websocket to connect to server
-        var ws = io("ws://" + ip);
+        var ws = io("ws://" + ip, { reconnection: false, timeout: 999999 });
         ws.on("connect", () => {
             console.log("Connected to server");
             msg.setMessage("Connected!");
